@@ -6,6 +6,7 @@
     <br>
     <p>Total Clicks: <%= short_url.try(:url_open_count) %></p>
     <p>IP Addresses: <%= short_url.try(:track_short_urls).map(&:id_addr).join(', ') %></p>
+    <p>Expiry Date: <%= short_url.try(:expiry_date) %></p>
     <hr>
   <% end %>
 <% end %>
