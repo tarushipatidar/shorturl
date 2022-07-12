@@ -1,0 +1,11 @@
+<h1>Analytics</h1>
+<% if @all_short_urls.present? %>
+  <% @all_short_urls.each do |short_url| %>
+    <h3><%= short_url.try(:real_url) %></h3>
+    <p><%= APP_CONFIG['domain'] + short_url.try(:short_url) %></p>
+    <br>
+    <p>Total Clicks: <%= short_url.try(:url_open_count) %></p>
+    <p>IP Addresses: <%= short_url.try(:track_short_urls).map(&:id_addr).join(', ') %></p>
+    <hr>
+  <% end %>
+<% end %>

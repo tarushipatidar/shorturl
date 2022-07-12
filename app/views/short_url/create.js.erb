@@ -1,0 +1,5 @@
+<% if @error.present? %>
+  $('#result').html("<p style='color: red;'> <%= @error %> </p>");
+<% elsif @new_data.present? %>
+  $('#result').html("<%= escape_javascript(render partial: 'short_url_details') %>");
+<% end %>

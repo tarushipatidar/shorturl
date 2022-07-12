@@ -1,0 +1,22 @@
+<h1>Welcome to short.com</h1>
+<p>Please enter your url here</p>
+<input type="url" id="real_url" style="width: 30%;" placeholder="https://www.google.co.in">
+<button onclick="submitUrl()">SHORTEN</button>
+<br>
+<div id='result'></div>
+
+<script>
+  function submitUrl(){
+    var real_url = document.getElementById('real_url').value;
+
+    // AJAX call for url submit
+    $.ajax({
+      type: "POST",
+      headers: {
+        'X-CSRF-Token': '<%= form_authenticity_token.to_s %>'
+      },
+      url: "/short_url",
+      data: {'real_url': real_url}
+    });
+  }
+</script>
