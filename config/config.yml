@@ -1,4 +1,4 @@
 development:
   domain: 'http://localhost:3000/'
 production:
-  domain: 'http://localhost:3000/'
+  domain: 'https://tarushorturi.herokuapp.com/'
